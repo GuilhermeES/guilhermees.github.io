@@ -1,0 +1,211 @@
+.header{
+    background-color: transparent;
+    z-index: 3;
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    display: flex;
+    align-items: center;    
+
+    @include respond-to(tablet) {
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                height: 60px;
+                width: 1px;
+                background-color: rgba(255, 255, 255, .1019607843);
+            }
+
+            &::before {
+                left: 32px;
+            }
+
+            &::after {
+                right: 32px; 
+            }
+    }
+
+    &__hamburguer{
+        display: none;
+
+        @include respond-to(tablet) {
+            display: block;
+        }
+    }
+
+    &__navigation{
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+        width: 100%;
+        position: relative;
+
+        &-item{
+            @include respond-to(tablet) {
+                padding-bottom: 55px;
+                padding-left: 48px;
+                padding-right: 48px;
+            }
+        }
+
+        @include respond-to(tablet) {
+            display: block;
+            padding-top: 103px;
+            padding-bottom: 45px;
+            border-bottom: 1px solid rgba(255, 255, 255, .1019607843);
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 1px;
+                background-color: rgba(255, 255, 255, .1019607843);
+            }
+
+            &::before {
+                left: 20px;
+            }
+
+            &::after {
+                right: 20px; 
+            }
+        }
+    }
+
+    &__menu{
+        width: 100%;
+
+        @include respond-to(tablet) {
+            min-height: fit-content;
+            background: $dark-blue;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 367px;
+            background-color: $dark-blue;
+            transition: transform 0.2s ease;
+            transform: translateX(-100%); // escondido inicialmente
+            z-index: 999;
+
+            &.is-open {
+                transform: translateX(0); // mostra o menu
+            }
+        }
+    }
+
+    &__nav{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding-right: 32px;
+        padding-left: 32px;
+
+        @include respond-to(tablet) {
+            justify-content: space-between;
+            padding-right: 48px;
+            padding-left: 48px;
+        }
+    }
+
+    &__link{
+        color: #ffffff;
+        text-transform: uppercase;
+        font-size: 14px;
+        text-decoration: none;
+        letter-spacing: -0.42px;
+
+        &--highlight{
+            color: $primary;
+        }
+
+        @include respond-to(tablet) {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 17px;
+            font-weight: 500;
+        }
+    }
+
+    &__icon{
+        display: none;
+        @include respond-to(tablet) {
+            display: block;
+        }
+    }
+
+    &__logo{
+        margin-right: 107px;
+    }
+
+    &__logo-mobile{
+        display: none;
+        padding-left: 48px;
+        padding-right: 48px;
+        padding-bottom: 24px;
+        padding-top: 24px;
+        position: relative;
+        border-bottom: 1px solid rgba(255, 255, 255, .1019607843);
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background-color: rgba(255, 255, 255, .1019607843);
+        }
+
+        &::before {
+            left: 20px;
+        }
+
+        &::after {
+            right: 20px; 
+        }
+
+        @include respond-to(tablet) {
+            display: block;
+        }
+    }
+
+    &__cta-mobile{
+        display: none;
+        position: relative;
+
+        @include respond-to(tablet) {
+            padding-top: 24px;
+            padding-bottom: 24px;
+            padding-left: 48px;
+            padding-right: 48px;
+            display: block;
+            border-bottom: 1px solid rgba(255, 255, 255, .1019607843);
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 1px;
+                background-color: rgba(255, 255, 255, .1019607843);
+            }
+
+            &::before {
+                left: 20px;
+            }
+
+            &::after {
+                right: 20px; 
+            }
+        }
+    }
+}

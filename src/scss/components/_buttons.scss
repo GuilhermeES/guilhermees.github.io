@@ -1,0 +1,26 @@
+.primary-link{
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    letter-spacing: -0.6px;
+    display: flex;
+    transition: 0.5s all;
+
+    &:hover{
+        opacity: 0.5;
+    }
+}   
+
+.primary-cta{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $primary;
+    border-radius: 5px;
+    padding: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 17px;
+}
