@@ -8,25 +8,24 @@
     align-items: center;    
 
     @include respond-to(tablet) {
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            height: 60px;
+            width: 1px;
+            background-color: rgba(255, 255, 255, .1019607843);
+        }
 
-            &::before,
-            &::after {
-                content: '';
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                height: 60px;
-                width: 1px;
-                background-color: rgba(255, 255, 255, .1019607843);
-            }
+        &::before {
+            left: 32px;
+        }
 
-            &::before {
-                left: 32px;
-            }
-
-            &::after {
-                right: 32px; 
-            }
+        &::after {
+            right: 32px; 
+        }
     }
 
     &__hamburguer{
@@ -91,11 +90,11 @@
             width: 367px;
             background-color: $dark-blue;
             transition: transform 0.2s ease;
-            transform: translateX(-100%); // escondido inicialmente
+            transform: translateX(-100%);
             z-index: 999;
 
             &.is-open {
-                transform: translateX(0); // mostra o menu
+                transform: translateX(0);
             }
         }
     }
