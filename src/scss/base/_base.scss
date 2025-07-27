@@ -3,6 +3,9 @@ body{
   color: #ffffff;
   overflow-x: hidden;
   position: relative;
+  @include respond-to(tablet) {
+    overflow-y: hidden;
+  }
 }
 
 html{
